@@ -1,0 +1,24 @@
+<mat-nav-list>
+    <h3 mat-subheader>Project</h3>
+    <mat-list-item routerLink="project" (click)="onNavClick()">
+        <mat-icon mat-list-icon svgIcon="projects"></mat-icon>
+        <span mat-line>Home</span>
+        <span mat-line mat-subheader>View All the Projects</span>
+    </mat-list-item>
+    <h3 mat-subheader>Calendar</h3>
+    <mat-list-item routerLink="task" (click)="onNavClick()">
+        <mat-icon mat-list-icon svgIcon="month"></mat-icon>
+        <span mat-line>Monthly View</span>
+        <span mat-line mat-subheader>View by Month</span>
+    </mat-list-item>
+    <mat-list-item>
+        <mat-icon mat-list-icon svgIcon="week"></mat-icon>
+        <span mat-line>Weekly View</span>
+        <span mat-line mat-subheader>View by Week</span>
+    </mat-list-item>
+    <mat-list-item>
+        <mat-icon mat-list-icon [svgIcon] ="today"></mat-icon>
+        <span mat-line>Daily View</span>
+        <span mat-line mat-subheader>View by Day</span>
+    </mat-list-item>
+</mat-nav-list>

@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="openSideBar()">
+        <mat-icon aria-hidden="true">menu</mat-icon>
+    </button>
+    <span>Manage System</span>
+    <span class="fill-remaining-space"></span>
+    <mat-slide-toggle (change)="onChange($event.checked)">Dark Mode</mat-slide-toggle>
+</mat-toolbar>

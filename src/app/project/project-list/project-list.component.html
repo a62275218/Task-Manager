@@ -1,0 +1,13 @@
+<div class="container" [@listAnime]="projects.length">
+    <app-project-item *ngFor="let project of projects"
+                      [item]="project"
+                      class="card"
+                      (invite)="openInviteDialog()"
+                      (edit)="openEditDialog()"
+                      (delete)="openConfirmDialog(project)">
+
+    </app-project-item>
+</div>
+<button mat-fab type="button" (click)="openNewProjectDialog()" class="fab-button">
+    <mat-icon>add</mat-icon>
+</button>
