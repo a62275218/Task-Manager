@@ -8,12 +8,13 @@ import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {loadSvgResources} from '../utils/svg.util';
 import {AppRoutingModule} from '../app-routing.module';
+import 'rxjs/add/operator/take';
 
 @NgModule({
     imports: [
         SharedModule,
         BrowserAnimationsModule,
-        AppRoutingModule
+        AppRoutingModule,
     ],
     declarations: [
         HeaderComponent,
@@ -24,7 +25,7 @@ import {AppRoutingModule} from '../app-routing.module';
         HeaderComponent,
         FooterComponent,
         SidebarComponent,
-        AppRoutingModule
+        AppRoutingModule,
     ]
 })
 export class CoreModule {

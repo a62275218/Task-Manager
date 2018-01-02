@@ -81,7 +81,7 @@ export class ProjectListComponent implements OnInit {
             }
         });
 
-        dialogRef.afterClosed().subscribe(result => {
+        dialogRef.afterClosed().subscribe(() => {
             this.projects = this.projects.filter(p => p.id !== project.id);
         });
     }

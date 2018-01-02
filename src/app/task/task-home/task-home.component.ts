@@ -1,4 +1,4 @@
-import {Component, OnInit, HostBinding} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {NewTaskComponent} from '../new-task/new-task.component';
 import {CopyTaskComponent} from '../copy-task/copy-task.component';
@@ -23,6 +23,7 @@ export class TaskHomeComponent implements OnInit {
             id: 1,
             name: 'pending',
             desc: 'task1',
+            order: 1,
             tasks: [
                 {
                     id: 1,
@@ -55,6 +56,7 @@ export class TaskHomeComponent implements OnInit {
         {
             id: 2,
             name: 'done',
+            order: 2,
             tasks: [
                 {
                     id: 1,
@@ -144,5 +146,19 @@ export class TaskHomeComponent implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe(result => console.log(result));
+    }
+
+    handleMove(srcData, list) {
+        switch (srcData.tag) {
+            case'task-item':
+                break;
+            case 'task-list':
+                const tempOrder = srcData.data.order;
+                srcData.data.order = list.order;
+                list.order = tempOrder;
+                break;
+            default:
+                break;
+        }
     }
 }
